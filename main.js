@@ -1,10 +1,18 @@
 "use strict";
 
 function changeColor() {
+  const areItemsRed = document
+    .querySelector(".color-change")
+    .classList.contains("red");
+
   const itemsWithClassColorChange = document.querySelectorAll(".color-change");
 
   for (const item of itemsWithClassColorChange) {
-    item.classList.add("red");
+    if (areItemsRed) {
+      item.classList.remove("red");
+    } else {
+      item.classList.add("red");
+    }
   }
 }
 
